@@ -120,7 +120,7 @@ if(isset($_POST['submit'])){
 	if($result == TRUE){
 				echo '<script language="javascript">';
 				echo 'alert("Details added. Please proceed to the counter.");';
-				echo 'window.location.href="register.php";';
+				echo 'window.location.href="afterregister.php";';
 				echo '</script>';
 			}else{
 				echo '<script language="javascript">';

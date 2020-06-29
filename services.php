@@ -30,12 +30,19 @@ session_start();
     <link href="css/style.css" rel="stylesheet">
     <link rel="icon" href="akif.png" type="image/gif">
 
+<link rel="stylesheet" href="https://cdn.datatables.net/1.10.21/css/dataTables.bootstrap4.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.css" >
 
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.1/css/bootstrap-select.css" />
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.bundle.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.1/js/bootstrap-select.min.js"></script>
+
+<!-- <script src="https://code.jquery.com/jquery-3.5.1.js"></script> -->
+<script src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.10.21/js/dataTables.bootstrap4.min.js"></script>
+
 
 <link rel="stylesheet" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
 
@@ -194,9 +201,9 @@ $tar= date("Y-m-d");?>
 
 		</div>
 
-		<div class="col-md-8" style="overflow-y:auto;height: 500px">
+		<div class="col-md-8">
 			
-			<table class="table table-striped table-hover">
+			<table id="example" class="table table-striped table-bordered" style="width:100%">
 				<thead>
 					<tr>
 						<th>
@@ -206,7 +213,7 @@ $tar= date("Y-m-d");?>
 							Type
 						</th>
 						<th style="text-align:center">
-							Action
+							Delete
 						</th>
 					</tr>
 				</thead>
@@ -246,7 +253,7 @@ $tar= date("Y-m-d");?>
 				
 					
 				</tbody>
-			</table>
+			</table><br>
 		</div>
 	</div>
 </div>
@@ -284,6 +291,11 @@ if(isset($_POST['submit'])){
     <script src="js/scripts.js"></script> -->
     <script>
     	$('select').selectpicker();
+    </script>
+    <script>
+    	$(document).ready(function() {
+    $('#example').DataTable();
+} );
     </script>
 
   </body>

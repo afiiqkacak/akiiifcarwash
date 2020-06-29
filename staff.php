@@ -30,12 +30,18 @@ session_start();
     <link href="css/style.css" rel="stylesheet">
     <link rel="icon" href="akif.png" type="image/gif">
 
+<link rel="stylesheet" href="https://cdn.datatables.net/1.10.21/css/dataTables.bootstrap4.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.css" >
+
 
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.1/css/bootstrap-select.css" />
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.bundle.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.1/js/bootstrap-select.min.js"></script>
+
+<script src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.10.21/js/dataTables.bootstrap4.min.js"></script>
 
 <link rel="stylesheet" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
 
@@ -209,9 +215,9 @@ $tar= date("Y-m-d");?>
 
 		</div>
 
-		<div class="col-md-8" style="overflow-y:auto;height: 500px">
+		<div class="col-md-8">
 			
-			<table class="table table-striped table-hover">
+			<table id="example" class="table table-striped table-bordered" style="width:100%">
 				<thead>
 					<tr>
 						<th>
@@ -230,8 +236,11 @@ $tar= date("Y-m-d");?>
 							Address
 						</th>
 						
-						<th style="text-align:center" colspan="2">
-							Action
+						<th style="text-align:center">
+							Update
+						</th>
+						<th style="text-align:center">
+							Delete
 						</th>
 					</tr>
 				</thead>
@@ -288,10 +297,10 @@ ORDER BY name";
 						
 
 
-						<td style="text-align:right">
+						<td style="text-align:center;">
 						<button class="unstyled-button" style="color: blue;" name="submit"><i class="fa fa-check" aria-hidden="true"></i></button></td></form>
 
-					<td style="text-align:left">
+					<td style="text-align:center;">
 					<a href="deletestaff.php?staffid=<?php echo $row['staff_id'];?>" 
 					onclick="return confirm('Delete from staff?')" class="danger" style="color: red; "><i class="fa fa-times fa-lg" aria-hidden="true"></i>
 						</a></td>
@@ -345,6 +354,12 @@ if(isset($_POST['submit'])){
     <script src="js/scripts.js"></script> -->
     <script>
     	$('select').selectpicker();
+    </script>
+
+    <script>
+    	$(document).ready(function() {
+    $('#example').DataTable();
+} );
     </script>
 
   </body>
