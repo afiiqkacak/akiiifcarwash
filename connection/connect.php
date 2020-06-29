@@ -1,8 +1,8 @@
 <?php
-$servername = "localhost"; //ikut je
-$username = "root"; //ikut je
-$password = ""; //ikut je
-$dbname = "carwash"; //nama database
+$servername = "den1.mysql4.gear.host"; //ikut je
+$username = "akiiifcarwash"; //ikut je
+$password = "Wm4YBu_6CHr?"; //ikut je
+$dbname = "akiiifcarwash"; //nama database
 
 
 // Create connection
