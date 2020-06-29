@@ -15,7 +15,7 @@ if(isset($_POST['submit'])){
 	$pele=implode("",$rr);
 	// echo $pele;
 
-	$sql="INSERT INTO `queue`(`date`,`status`,`car_id`) VALUES ('$date','Queuing','$platenum')";
+	$sql="INSERT INTO `queue`(`date`,`status`,`car_id`, `queue_start`) VALUES ('$date','Queuing','$platenum', '$time')";
 	
 		if (mysqli_query($connect, $sql)==TRUE) {
 

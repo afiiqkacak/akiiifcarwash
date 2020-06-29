@@ -35,7 +35,7 @@ $result3 = mysqli_query($connect,$sql3) or die (mysqli_error($connect));
 $sql4 = "SELECT * FROM `avgtime`";
 $result4 = mysqli_query($connect,$sql4) or die (mysqli_error($connect));
 
-$sql5 = "SELECT DATE_FORMAT(arrival_time, '%H') AS time, COUNT(queue_id) AS jumlah
+$sql5 = "SELECT DATE_FORMAT(queue_start, '%H') AS time, COUNT(queue_id) AS jumlah
 FROM `queue`
 WHERE date LIKE '$tar'
 GROUP BY time";

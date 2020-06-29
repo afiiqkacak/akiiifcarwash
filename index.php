@@ -252,6 +252,9 @@ echo $someString;
 							Plate Number
 						</th>
 						<th>
+							Arrival Time
+						</th>
+						<th>
 							Time Started
 						</th>
 						<th>
@@ -271,7 +274,7 @@ echo $someString;
 				<tbody>
 		<?php
 		$tar= date("Y-m-d");
-		  $sql = "SELECT queue.queue_id, car.plate_num, queue.arrival_time, queue.completed_time, GROUP_CONCAT(service.service_type SEPARATOR'<br>') AS service, queue.status 
+		  $sql = "SELECT queue.queue_id, queue.queue_start, car.plate_num, queue.arrival_time, queue.completed_time, GROUP_CONCAT(service.service_type SEPARATOR'<br>') AS service, queue.status 
 FROM car JOIN queue JOIN queue_service JOIN service
 WHERE car.car_id=queue.car_id AND queue.queue_id=queue_service.queue_id AND queue_service.service_id=service.service_id AND queue.date LIKE '$tar' GROUP BY queue_id ORDER BY status DESC, queue_id ASC";
 					$result = mysqli_query($connect,$sql);
@@ -294,6 +297,9 @@ WHERE car.car_id=queue.car_id AND queue.queue_id=queue_service.queue_id AND queu
 					
 						<td>
 							<?php echo $row['plate_num'];?>
+						</td>
+						<td>
+							<?php echo $row['queue_start'];?>
 						</td>
 						<td>
 							<?php echo $row['arrival_time'];?>
