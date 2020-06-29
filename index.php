@@ -313,7 +313,6 @@ WHERE car.car_id=queue.car_id AND queue.queue_id=queue_service.queue_id AND queu
 	        		  	?>
 							<option value="Queuing">Queuing</option>
 							<option value="Completed">Completed</option>
-							<option value="Completed">Completed</option>
 							<option value="Collected">Collected</option>
 
 	        		  <?php
