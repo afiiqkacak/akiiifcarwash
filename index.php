@@ -135,7 +135,7 @@ $tar= date("Y-m-d");?>
 					 	<?php
 					 $sql2="SELECT * FROM car WHERE car_id NOT IN (SELECT car.car_id
 FROM `car` INNER JOIN queue 
-WHERE car.car_id=queue.car_id AND date='$tar')";
+WHERE car.car_id=queue.car_id AND date='$tar' AND status != 'Collected')";
 					 $result2 = mysqli_query($connect, $sql2);
 					if (mysqli_num_rows($result2)) 
 					{

@@ -11,31 +11,29 @@ if(isset($_POST['status'])){
 		
 		$sql = "UPDATE `queue` SET `status` = '$status', completed_time= '$time' WHERE `queue`.`queue_id` = '$queueid'";
 		mysqli_query($connect, $sql);
-		echo "<audio src='bell.mp3' autoplay></audio>";
+		// echo "<audio src='bell.mp3' autoplay></audio>";
 		echo '<script language="javascript">';
 		echo 'window.location.href="index.php";';
 		echo '</script>';
 
 
 
+	}elseif($status=="In Progress"){
+
+
+	$sql = "UPDATE `queue` SET `status` = '$status', arrival_time = '$time' WHERE `queue`.`queue_id` = '$queueid'";
+	$result = mysqli_query($connect, $sql);
+	echo '<script language="javascript">';
+	echo 'window.location.href="index.php";';
+	echo '</script>';
+
 	}else{
-
-
-
 
 	$sql = "UPDATE `queue` SET `status` = '$status' WHERE `queue`.`queue_id` = '$queueid'";
 	$result = mysqli_query($connect, $sql);
-
-	if($result == TRUE){
-				echo '<script language="javascript">';
-				echo 'window.location.href="index.php";';
-				echo '</script>';
-			}else{
-				echo '<script language="javascript">';
-				echo 'alert("delete Fail");';
-				echo 'window.location.href="../admin/assign.php";';
-				echo '</script>';
-			}
+	echo '<script language="javascript">';
+	echo 'window.location.href="index.php";';
+	echo '</script>';
 		}
 
 			mysqli_close($connect);
