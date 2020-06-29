@@ -80,7 +80,7 @@ $tar= date("Y-m-d");
 			<table class="table">
 				<thead>
 					<tr>
-						<th style="text-align:center; font-size:30px;">
+						<th style="text-align:center;">
 							Queuing <i class="fa fa-car" aria-hidden="true"></i>
 						</th>
 					</tr>
@@ -94,7 +94,7 @@ $tar= date("Y-m-d");
 			<table class="table">
 				<thead>
 					<tr>
-						<th style="text-align:center; font-size:30px;">
+						<th style="text-align:center;">
 							In progress <i class="fa fa-wrench" aria-hidden="true"></i>
 						</th>
 					</tr>
@@ -114,7 +114,7 @@ $tar= date("Y-m-d");
 			<table class="table">
 				<thead>
 					<tr>
-						<th style="text-align:center; font-size:30px;">
+						<th style="text-align:center;">
 							Completed <i class="fa fa-check-square-o" aria-hidden="true"></i>
 						</th>
 					</tr>
