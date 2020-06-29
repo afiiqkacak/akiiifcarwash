@@ -293,7 +293,7 @@ ORDER BY plate_num";
 				
 					
 				</tbody>
-			</table>
+			</table><br>
 		</div>
 	</div>
 </div>
