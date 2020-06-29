@@ -151,23 +151,7 @@ WHERE car.car_id=queue.car_id AND date='$tar' AND status != 'Collected')";
 					 	
 					 	</select>
 				</div>
-				<!-- <div class="form-group">
-					 
-					<label for="exampleInputPassword1">
-						Password
-					</label>
-					<input type="password" class="form-control" id="exampleInputPassword1">
-				</div>
-				<div class="form-group">
-					 
-					<label for="exampleInputFile">
-						File input
-					</label>
-					<input type="file" class="form-control-file" id="exampleInputFile">
-					<p class="help-block">
-						Example block-level help text here.
-					</p>
-				</div> -->
+				
 				<div class="checkbox">
 				<label for="service">Select Service(s): <span style="color:red;">*</span></label>
   <select class="form-control" multiple data-live-search="true" name="service[]" required>
