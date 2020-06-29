@@ -252,10 +252,10 @@ echo $someString;
 							Plate Number
 						</th>
 						<th>
-							Arrival Time
+							Time Started
 						</th>
 						<th>
-							Completed Time
+							Time Completed
 						</th>
 						<th>
 							Service(s)
