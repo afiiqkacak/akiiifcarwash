@@ -47,8 +47,7 @@ if(isset($_POST['submit'])){
 	}
 
 
-// } else {
-//   echo "Error: " . $sql . "<br>" . mysqli_error($connect);
+
 }
 
 
