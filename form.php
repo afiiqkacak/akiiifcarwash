@@ -1,7 +1,6 @@
 <?php
 include('connection/connect.php');
 date_default_timezone_set('Asia/Kuala_Lumpur');
-$checkBox = implode(',', $_POST['service']);
 $date = date("Y-m-d");
 $time = date("H:i:s");
 
