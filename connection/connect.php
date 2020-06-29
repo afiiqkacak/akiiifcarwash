@@ -1,6 +1,6 @@
 <?php
 $servername = "den1.mysql4.gear.host"; 
-$username = "akiiifcarwash"; //ikut je
+$username = "akiiifcarwash"; 
 $password = "Wm4YBu_6CHr?"; //ikut je
 $dbname = "akiiifcarwash"; //nama database
 
