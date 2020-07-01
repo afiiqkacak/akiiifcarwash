@@ -113,7 +113,7 @@ if(isset($_POST['submit'])){
 	$type=$_POST['phone'];
 	$address=$_POST['address'];
 
-	
+	if(strlen($ic) == '12' && (strlen($type) == '10' || strlen($type) == '11')){
 	$sql = "INSERT INTO `customer`(`name`, `ic`, `phone_number`, `address`) VALUES ('$service', '$ic', '$type', '$address')";
 	$result = mysqli_query($connect, $sql);
 
@@ -125,12 +125,19 @@ if(isset($_POST['submit'])){
 			}else{
 				echo '<script language="javascript">';
 				echo 'alert("Data is already present! Avoid duplicate entry.");';
-				echo 'window.location.href="register.php";';
+				echo 'window.location.href="afterregister.php";';
 				echo '</script>';
 			}
 
-			mysqli_close($connect);
+			
 
+}else{
+		echo '<script language="javascript">';
+		echo 'alert("Please enter a valid IC and phone number.");';
+		echo 'window.location.href="register.php";';
+		echo '</script>';
+}
+mysqli_close($connect);
 }
 ?>
 </html>

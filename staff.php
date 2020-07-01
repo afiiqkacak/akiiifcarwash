@@ -328,10 +328,9 @@ if(isset($_POST['submit'])){
 	$address=$_POST['address'];
 	$role=$_POST['role'];
 
-	
+	if(strlen($ic) == '12' && (strlen($phone) == '10' || strlen($phone) == '11')){
 	$sql = "CALL `insertStaff`('$ic', '$name', '$address', '$role', '$phone')";
 	$result = mysqli_query($connect, $sql);
-
 	if($result == TRUE){
 				echo '<script language="javascript">';
 				echo 'alert("Staff added.");';
@@ -343,9 +342,15 @@ if(isset($_POST['submit'])){
 				echo 'window.location.href="staff.php";';
 				echo '</script>';
 			}
+}else{
+	 	echo '<script language="javascript">';
+		echo 'alert("Please enter a valid IC and phone number.");';
+		echo 'window.location.href="customer.php";';
+		echo '</script>';
+			
 
-			mysqli_close($connect);
-
+}
+mysqli_close($connect);
 }
 ?>
 

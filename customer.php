@@ -304,7 +304,7 @@ if(isset($_POST['submit'])){
 	$type=$_POST['phone'];
 	$address=$_POST['address'];
 
-	
+	if(strlen($ic) == '12' && (strlen($type) == '10' || strlen($type) == '11')){
 	$sql = "CALL `insertCustomer`('$service', '$ic', '$type', '$address')";
 	$result = mysqli_query($connect, $sql);
 
@@ -320,8 +320,15 @@ if(isset($_POST['submit'])){
 				echo '</script>';
 			}
 
-			mysqli_close($connect);
+			
 
+}else{
+	echo '<script language="javascript">';
+	echo 'alert("Please enter a valid IC and phone number.");';
+	echo 'window.location.href="customer.php";';
+	echo '</script>';
+}
+mysqli_close($connect);
 }
 ?>
 
@@ -344,10 +351,11 @@ if(isset($_POST['hantar'])){
 // echo $address;
 // echo $id;
 	// if($status=="Completed"){
-		
+	if(strlen($phone) == '10' || strlen($phone) == '11'){	
 	$sql = "CALL `updateCustomer`('$id', '$phone', '$address')";
+	$result=mysqli_query($connect, $sql);
 	if($result == TRUE){
-	 	mysqli_query($connect, $sql);
+	 	
 	 	echo '<script language="javascript">';
 	 	echo 'alert("Customer profile updated.");';
 	 	echo 'window.location.href="customer.php";';
@@ -357,11 +365,17 @@ if(isset($_POST['hantar'])){
 
 	 }else{
 	 	echo '<script language="javascript">';
-	 	echo 'alert("Failed to update.");';
+	 	echo 'alert("Fail to update.");';
 		echo 'window.location.href="customer.php";';
 		echo '</script>';
 	 		}
-	 	}
+
+ }else{
+	 	echo '<script language="javascript">';
+		echo 'alert("Please enter a valid phone number.");';
+		echo 'window.location.href="customer.php";';
+		echo '</script>';
+}
 
 
 
@@ -382,7 +396,7 @@ if(isset($_POST['hantar'])){
 	// 	}
 
 	 		mysqli_close($connect);
-		
+		}
 ?>
 <script>
     	$(document).ready(function() {

@@ -12,7 +12,7 @@ if(isset($_POST['submit'])){
 // echo $address;
 // echo $id;
 	// if($status=="Completed"){
-		
+	if(strlen($phone) == '10' || strlen($phone) == '11'){	
 	$sql = "CALL `updateStaff`('$id', '$phone', '$address', '$role')";
 	 	mysqli_query($connect, $sql);
 	 	echo '<script language="javascript">';
@@ -24,10 +24,11 @@ if(isset($_POST['submit'])){
 
 	 }else{
 	 	echo '<script language="javascript">';
-	 	echo 'alert("Failed to update.");';
+	 	echo 'alert("Fail to update.");';
 		echo 'window.location.href="staff.php";';
 		echo '</script>';
 	 		}
+
 
 
 
@@ -48,5 +49,6 @@ if(isset($_POST['submit'])){
 	// 	}
 
 	 		mysqli_close($connect);
+	 	}
 		
 ?>
