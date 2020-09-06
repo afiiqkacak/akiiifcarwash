@@ -195,7 +195,7 @@ $tar= date("Y-m-d");?>
 							<input type="text" class="form-control" name="question" maxlength="50"/>
 						</div>
 						
-						<button type="submit" name="submit" class="btn btn-info" onClick="return confirm('Make sure you remember there are no errors in your spelling. Once the form is submitted, you are not allowed to update your answer.')">Submit <i class="fa fa-arrow-circle-right" aria-hidden="true"></i>
+						<button type="submit" name="submit" class="btn btn-info" onClick="return confirm('Make sure there are no errors in your spelling. Once the form is submitted, you are not allowed to update your answer.')">Submit <i class="fa fa-arrow-circle-right" aria-hidden="true"></i>
 				</button>
 					</form>
 				</div>
