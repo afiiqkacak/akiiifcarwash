@@ -345,7 +345,7 @@ if(isset($_POST['submit'])){
 }else{
 	 	echo '<script language="javascript">';
 		echo 'alert("Please enter a valid IC and phone number.");';
-		echo 'window.location.href="customer.php";';
+		echo 'window.location.href="staff.php";';
 		echo '</script>';
 			
 
