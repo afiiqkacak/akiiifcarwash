@@ -192,7 +192,7 @@ $tar= date("Y-m-d");?>
 							<label for="question">
 								What was the name of the hospital that you were born? (Case-sensitive)
 							</label>
-							<input type="text" class="form-control" name="question" maxlength="50"/>
+							<input type="text" class="form-control" name="question" maxlength="50" required />
 						</div>
 						
 						<button type="submit" name="submit" class="btn btn-info" onClick="return confirm('Make sure there are no errors in your spelling. Once the form is submitted, you are not allowed to update your answer.')">Submit <i class="fa fa-arrow-circle-right" aria-hidden="true"></i>
