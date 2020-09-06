@@ -274,21 +274,21 @@ $tar= date("Y-m-d");?>
 							<label for="oldpassword">
 								Old Password:
 							</label>
-							<input type="password" class="form-control" id="oldpassword" name="oldpassword" maxlength="15"/>
+							<input type="password" class="form-control" id="oldpassword" name="oldpassword" maxlength="15" required />
 						</div>
 						<div class="form-group">
 							 
 							<label for="newpassword">
 								New Password:
 							</label>
-							<input type="password" class="form-control" id="newpassword" name="newpassword" maxlength="15" />
+							<input type="password" class="form-control" id="newpassword" name="newpassword" maxlength="15" required />
 						</div>
 						<div class="form-group">
 							 
 							<label for="retypepassword">
 								Retype Password:
 							</label>
-							<input type="password" class="form-control" id="retypepassword" name="retypepassword" maxlength="15" />
+							<input type="password" class="form-control" id="retypepassword" name="retypepassword" maxlength="15" required />
 						</div>
 						<div id="message">
                     <h5>Password must contain the following:</h5>
