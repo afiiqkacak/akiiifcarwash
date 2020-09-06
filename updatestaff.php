@@ -14,15 +14,21 @@ if(isset($_POST['submit'])){
 	// if($status=="Completed"){
 	if(strlen($phone) == '10' || strlen($phone) == '11'){	
 	$sql = "CALL `updateStaff`('$id', '$phone', '$address', '$role')";
-	 	mysqli_query($connect, $sql);
+	$result=mysqli_query($connect, $sql);
+		if($result == TRUE){
 	 	echo '<script language="javascript">';
 	 	echo 'alert("Staff profile updated.");';
 	 	echo 'window.location.href="staff.php";';
 	 	echo '</script>';
-
-
-
-	 }else{
+			
+	}else{
+		echo '<script language="javascript">';
+	 	echo 'alert("Fail to update.");';
+		echo 'window.location.href="staff.php";';
+		echo '</script>';
+	 }
+		
+	}else{
 	 	echo '<script language="javascript">';
 	 	echo 'alert("Fail to update.");';
 		echo 'window.location.href="staff.php";';
