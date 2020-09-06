@@ -231,15 +231,22 @@ if(isset($_POST['submit'])){
 	$phone = $_POST['phone'];
 	$address = $_POST['address'];
 	$id = $_POST['staffid'];
-
-	if($result == TRUE){	
+	
+	if(strlen($phone) == '10' || strlen($phone) == '11'){	
 	$sql = "UPDATE `staff` SET `phone_number`='$phone',`address`='$address' WHERE staff_id='$id'";
-	 	mysqli_query($connect, $sql);
+	$result= mysqli_query($connect, $sql);
+		if($result == TRUE){
 	 	echo '<script language="javascript">';
 	 	echo 'alert("Profile updated.");';
 	 	echo 'window.location.href="profile.php";';
 	 	echo '</script>';
-
+		}else{
+			
+		echo '<script language="javascript">';
+	 	echo 'alert("Failed to update.");';
+		echo 'window.location.href="profile.php";';
+		echo '</script>';
+		}
 
 
 	 }else{
