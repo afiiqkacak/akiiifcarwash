@@ -40,16 +40,15 @@ session_start();
         echo "<script>alert('Your Password Must Contain At Least 1 Lowercase Letter!');</script>";
         echo "<meta http-equiv='refresh' content='0; url=password.php'/>";
     }else{
-    
+    $hash = md5($confirm);
   $sql = "UPDATE staff 
-          SET password = '$confirm' 
+          SET password = '$hash' 
           WHERE staff_id = '$user'";
     
   $execute = mysqli_query ($connect,$sql) or die (mysqli_error ($connect));
 
-session_destroy();
-  echo "<script>alert('Password updated. Please login again.');</script>";
-  echo "<meta http-equiv='refresh' content='0; url=loginpage.php'/>";
+  echo "<script>alert('Password updated.');</script>";
+  echo "<meta http-equiv='refresh' content='0; url=password.php'/>";
 }
   
   }
@@ -274,21 +273,21 @@ $tar= date("Y-m-d");?>
 							<label for="oldpassword">
 								Old Password:
 							</label>
-							<input type="password" class="form-control" id="oldpassword" name="oldpassword" maxlength="15" required />
+							<input type="password" class="form-control" id="oldpassword" name="oldpassword" maxlength="15"/>
 						</div>
 						<div class="form-group">
 							 
 							<label for="newpassword">
 								New Password:
 							</label>
-							<input type="password" class="form-control" id="newpassword" name="newpassword" maxlength="15" required />
+							<input type="password" class="form-control" id="newpassword" name="newpassword" maxlength="15" />
 						</div>
 						<div class="form-group">
 							 
 							<label for="retypepassword">
 								Retype Password:
 							</label>
-							<input type="password" class="form-control" id="retypepassword" name="retypepassword" maxlength="15" required />
+							<input type="password" class="form-control" id="retypepassword" name="retypepassword" maxlength="15" />
 						</div>
 						<div id="message">
                     <h5>Password must contain the following:</h5>
