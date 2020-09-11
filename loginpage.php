@@ -22,12 +22,12 @@
 				<form class="login100-form validate-form p-b-33 p-t-5" action="">
 
 					<div class="wrap-input100 validate-input" data-validate = "Enter username">
-						<input class="input100" type="text" name="ic" placeholder="IC No." required>
+						<input class="input100" type="text" name="ic" placeholder="IC No.">
 						<span class="focus-input100" data-placeholder="&#xe82a;"></span>
 					</div>
 
 					<div class="wrap-input100 validate-input" data-validate="Enter password">
-						<input class="input100" type="password" name="pass" placeholder="Password" maxlength="15" required>
+						<input class="input100" type="password" name="pass" placeholder="Password" maxlength="8">
 						<span class="focus-input100" data-placeholder="&#xe80f;"></span>
 					</div>
 
@@ -55,7 +55,7 @@ session_start();
 include('connection/connect.php');
 		if(isset($_GET['login'])){
 			$ic = $_GET['ic'];
-			$hash = $_GET['pass'];
+			$hash = md5($_GET['pass']);
 			$sql = "SELECT * FROM staff WHERE ic='$ic' AND password='$hash'";
 			$execute=mysqli_query($connect, $sql) or die (mysqli_error($connect));
 
@@ -73,14 +73,14 @@ include('connection/connect.php');
 						echo"<meta http-equiv='refresh' content='0; url=dashboard.php'/>";
 						if ($_SESSION ['password'] == '123'){
 							echo "<script>alert('You are currently using the default password. Please change it ASAP.');</script>";
-							echo"<meta http-equiv='refresh' content='0; url=password.php'/>";
+							echo"<meta http-equiv='refresh' content='0; url=dashboard.php'/>";
 							if($_SESSION ['question'] == NULL){
 							echo "<script>alert('Please update your security question.');</script>";
-							echo"<meta http-equiv='refresh' content='0; url=question.php'/>";
+							echo"<meta http-equiv='refresh' content='0; url=dashboard.php'/>";
 							}
 						}elseif($_SESSION ['question'] == NULL){
 							echo "<script>alert('Please update your security question.');</script>";
-							echo"<meta http-equiv='refresh' content='0; url=question.php'/>";
+							echo"<meta http-equiv='refresh' content='0; url=dashboard.php'/>";
 						}
 
 					}
