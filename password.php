@@ -18,7 +18,7 @@ session_start();
   if (isset ($_POST['submit'])){
     $user = $_SESSION['staff_id'];
     $pass = $_SESSION ["password"];
-    $oldpass = $_POST['oldpassword'];
+    $oldpass = md5($_POST['oldpassword']);
     $newpass = $_POST['newpassword'];
     $confirm = $_POST['retypepassword'];
     
