@@ -27,7 +27,7 @@
 					</div>
 
 					<div class="wrap-input100 validate-input" data-validate="Enter password">
-						<input class="input100" type="password" name="pass" placeholder="Password" maxlength="8">
+						<input class="input100" type="password" name="pass" placeholder="Password" maxlength="15">
 						<span class="focus-input100" data-placeholder="&#xe80f;"></span>
 					</div>
 
