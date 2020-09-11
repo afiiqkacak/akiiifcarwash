@@ -47,8 +47,9 @@ session_start();
     
   $execute = mysqli_query ($connect,$sql) or die (mysqli_error ($connect));
 
-  echo "<script>alert('Password updated.');</script>";
-  echo "<meta http-equiv='refresh' content='0; url=password.php'/>";
+session_destroy();
+  echo "<script>alert('Password updated. Please login again.');</script>";
+  echo "<meta http-equiv='refresh' content='0; url=loginpage.php'/>";
 }
   
   }
