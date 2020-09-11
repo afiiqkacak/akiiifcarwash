@@ -73,10 +73,10 @@ include('connection/connect.php');
 						echo"<meta http-equiv='refresh' content='0; url=dashboard.php'/>";
 						if ($_SESSION ['password'] == md5('123')){
 							echo "<script>alert('You are currently using the default password. Please change it ASAP.');</script>";
-							echo"<meta http-equiv='refresh' content='0; url=dashboard.php'/>";
+							echo"<meta http-equiv='refresh' content='0; url=password.php'/>";
 							if($_SESSION ['question'] == NULL){
 							echo "<script>alert('Please update your security question.');</script>";
-							echo"<meta http-equiv='refresh' content='0; url=password.php'/>";
+							echo"<meta http-equiv='refresh' content='0; url=question.php'/>";
 							}
 						}elseif($_SESSION ['question'] == NULL){
 							echo "<script>alert('Please update your security question.');</script>";
