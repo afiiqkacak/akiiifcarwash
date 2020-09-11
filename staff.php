@@ -329,7 +329,9 @@ if(isset($_POST['submit'])){
 	$role=$_POST['role'];
 
 	if(strlen($ic) == '12' && (strlen($phone) == '10' || strlen($phone) == '11')){
-	$sql = "CALL `insertStaff`('$ic', '$name', '$address', '$role', '$phone')";
+	$str='123';
+	$password=md5($str);
+	$sql = "CALL `insertStaff`('$ic', '$name', '$address', '$role', '$phone', '$password')";
 	$result = mysqli_query($connect, $sql);
 	if($result == TRUE){
 				echo '<script language="javascript">';
