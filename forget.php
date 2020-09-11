@@ -109,7 +109,9 @@ if(isset($_POST['submit'])){
 	$soklan = $row ["question"];
 
 			if($question == $soklan){
-				$sql = "UPDATE `staff` SET `password`='123' WHERE `ic`='$ic'";
+				$str='123';
+				$def = md5($str);
+				$sql = "UPDATE `staff` SET `password`='$def' WHERE `ic`='$ic'";
 				$result = mysqli_query($connect, $sql);
 
 					if(mysqli_affected_rows($connect) >0 ){
