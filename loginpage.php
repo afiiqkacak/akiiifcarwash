@@ -71,7 +71,7 @@ include('connection/connect.php');
 						$_SESSION ['question'] = $row ["question"];
 						echo "<script>alert('Welcome ".$_SESSION ['name']."!');</script>";
 						echo"<meta http-equiv='refresh' content='0; url=dashboard.php'/>";
-						if ($_SESSION ['password'] == '123'){
+						if ($_SESSION ['password'] == md5('123')){
 							echo "<script>alert('You are currently using the default password. Please change it ASAP.');</script>";
 							echo"<meta http-equiv='refresh' content='0; url=dashboard.php'/>";
 							if($_SESSION ['question'] == NULL){
